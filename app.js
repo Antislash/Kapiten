@@ -1,1 +1,1 @@
-var app = angular.module("ngKapiten",[]);
+var app = angular.module("ngKapiten",['ngRoute']);

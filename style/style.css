@@ -1,0 +1,16 @@
+.imgKapiten
+{
+	float: left;
+	display: inline-block;
+    padding: 5px;
+    transition: 0.3s;
+	opacity: 0.8;
+
+	max-width: 10%;
+	height: auto;
+}
+
+.imgKapiten:hover
+{
+	opacity: 1;
+}

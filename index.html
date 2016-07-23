@@ -1,22 +1,41 @@
 <!doctype>
 <html>
 	<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<title>Kapiten</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="style/style.css">
+	
 	</head>
-	<body>
-		<div ng-app="ngKapiten">
+	<body ng-app="ngKapiten">
+		<!-- Navigation -->
+		<nav ng-controller="CtrlMenu" class="container">
+			<ul class="nav nav-pills nav-justified ">
+				<li ng-repeat="onglet in onglets"> <a href={{onglet.lien}}>{{onglet.nom}}</a></li>
+			</ul>
 
-			<div class="menu">
-				<div>
-					<ul>
-						<li ng-repeat="onglet in onglets"> {{onglet.nom}}</li>
-					</ul>
-				</div>
+		<a  href="#"><img src="image/kapiten.jpg" class="imgKapiten"></a>
+		</nav>
 
-			</div>
+		<!-- Corps -->
+		<div ng-view>
+			
 		</div>
+
+		<!-- Footer -->
+		<footer ng-controller="CtrlFooter" class="panel-footer">
+			<div class="container">
+				<a ng-repeat="image in images" href={{image.lien}} >
+					<img  src={{image.url}} alt={{image.nom}} height="64" width="64">
+				</a>
+			</div>
+		</footer>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
 		<script src="app.js"></script>
-		<script src="controler/menu.js"></script>
+		<script src="route/routing.js"></script>
+		<script src="controler/controller.js"></script>
 	</body>
 
 </html>
