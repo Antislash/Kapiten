@@ -1,0 +1,22 @@
+<!doctype>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app="ngKapiten">
+
+			<div class="menu">
+				<div>
+					<ul>
+						<li ng-repeat="onglet in onglets"> {{onglet.nom}}</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<script src="app.js"></script>
+		<script src="controler/menu.js"></script>
+	</body>
+
+</html>
