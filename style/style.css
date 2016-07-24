@@ -1,16 +1,49 @@
 .imgKapiten
 {
 	float: left;
-	display: inline-block;
+	display: block;
     padding: 5px;
     transition: 0.3s;
 	opacity: 0.8;
-
-	max-width: 10%;
-	height: auto;
 }
 
 .imgKapiten:hover
 {
 	opacity: 1;
+}
+
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+
+  .carousel
+  {
+  	width:100%;
+	height:auto;
+	margin:0 auto;
+  }
+
+.tales 
+{
+  width: 100% !important;
+}
+
+.carousel-inner
+{
+  width: 100% !important;
+  max-height: 650px !important;
+}
+
+.arrow
+{
+	transition: 0.3s;
+}
+
+.arrow:hover
+{
+	color : AquaMarine;
+	zoom : 1.1;
 }

@@ -4,6 +4,10 @@
 	<title>Kapiten</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="style/style.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<style>
+  </style>
 	
 	</head>
 	<body ng-app="ngKapiten">
@@ -13,7 +17,7 @@
 				<li ng-repeat="onglet in onglets"> <a href={{onglet.lien}}>{{onglet.nom}}</a></li>
 			</ul>
 
-		<a  href="#"><img src="image/kapiten.jpg" class="imgKapiten"></a>
+			<a  href="#/Accueil"><img src="image/kapiten.jpg" class="imgKapiten col-md-2 col-md-offset-5"></a>
 		</nav>
 
 		<!-- Corps -->
@@ -23,9 +27,9 @@
 
 		<!-- Footer -->
 		<footer ng-controller="CtrlFooter" class="panel-footer">
-			<div class="container">
+			<div class="container imgFooter">
 				<a ng-repeat="image in images" href={{image.lien}} >
-					<img  src={{image.url}} alt={{image.nom}} height="64" width="64">
+					<img  src={{image.url}} alt={{image.nom}} class= "col-md-1 col-md-offset-2">
 				</a>
 			</div>
 		</footer>

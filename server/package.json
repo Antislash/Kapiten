@@ -1,0 +1,27 @@
+{
+  "name": "kapiten",
+  "version": "1.0.0",
+  "description": "Site vitrine de vetements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antislash/Kapiten.git"
+  },
+  "keywords": [
+    "kapiten"
+  ],
+  "author": "Shiba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antislash/Kapiten/issues"
+  },
+  "homepage": "https://github.com/Antislash/Kapiten#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.5.6",
+    "path": "^0.12.7"
+  }
+}
