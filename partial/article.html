@@ -1,1 +1,13 @@
-Article
+<div class="container">
+
+	<span class="col-md-offset-11 glyphicon glyphicon-search search" aria-hidden="true"></span>
+  	<span class="sr-only">Search:</span>
+	<input type="text" name="FirstName" placeholder="Recherche" class="col-md-offset-9">
+
+	<section class = "col-md-offset-2 col-md-9" ng-repeat="article in articles">
+		<h2> {{article.titre}}</h2>
+		<img src={{article.url}} class="img-thumbnail col-md-7">
+		<p class="col-md-offset-7 col-md-4">{{article.paragraphe}}
+		</p>
+	</section>
+</div>
