@@ -6,25 +6,32 @@
 	<link rel="stylesheet" href="style/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.4.0/ui-bootstrap-tpls.min.js"></script>
 	
 	</head>
 	<body ng-app="ngKapiten">
 		<!-- Navigation -->
 		<nav ng-controller="CtrlMenu" class="container">
 			<ul class="nav nav-pills nav-justified ">
-				<li ng-repeat="onglet in onglets"> <a href={{onglet.lien}}>{{onglet.nom}}</a></li>
+				<li ng-repeat="onglet in onglets" > <a href={{onglet.lien}} class="page">{{onglet.nom}}</a></li>
 			</ul>
-			<!-- <span class="nav-pills nav-justified glyphicon glyphicon-shopping-cart col-md-2" ></span> -->
-			<a  href="#/Accueil"><img src="image/logo.png" class="imgKapiten col-md-2 col-md-offset-5"></a>
 		</nav>
 
+		<br>
+		
+		<!-- Images et logo d'entête -->
+		<div class="blocLogo">
+			<img src="image/LOGOGRIS.png" class="imgShip col-xs-1 ">
+			<a  href="#/Accueil"><img src="image/KAPITEN5GRIS.png" class="imgKapiten col-xs-3 col-md-offset-4"></a>
+			<img src="image/YEUXGRIS.png" class="imgYeux col-md-offset-3 col-xs-1 ">
+		</div>
 		<!-- Corps -->
 		<div ng-view></div>
 
 		<!-- Footer -->
 		<footer ng-controller="CtrlFooter" class="panel-footer">
 			<div class="container imgFooter">
-				<a ng-repeat="image in images" href={{image.lien}} >
+				<a ng-repeat="image in images track by $index" href={{image.lien}} target="_blank" >
 					<img  src={{image.url}} alt={{image.nom}} class= "col-md-1 col-md-offset-2 imgFoot">
 				</a>
 			</div>
@@ -32,6 +39,7 @@
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
 		<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
 		<script src="app.js"></script>
 		<script src="route/routing.js"></script>

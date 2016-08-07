@@ -5,11 +5,21 @@ app.controller('CtrlMenu', function($scope){
 			lien : "#/Accueil",
 		},
 		{
-			nom : "Article",
+			nom : "News",
 			lien : "#/Article",
 		},
 		{
 			nom : "Histoire",
+			lien : "#",
+		},
+		{
+
+			nom : "Contact",
+			lien : "#",
+		},
+		{
+
+			nom : "Shop",
 			lien : "#",
 		}
 
@@ -20,7 +30,7 @@ app.controller('CtrlFooter', function($scope){
 	$scope.images = [
 		{
 			nom : "Twiter",
-			url : "image/twiter.jpg",
+			url : "image/instagram.png",
 			lien : "http://www.twitter.com",
 		},
 		{
@@ -30,41 +40,44 @@ app.controller('CtrlFooter', function($scope){
 		},
 		{
 			nom : "Instagram",
-			url : "image/instagram.jpg",
-			lien : "http://www.instagram.com",
+			url : "image/instagram.png",
+			lien : "https://www.instagram.com/kapiten5/",
 		}
 	]
 })
 
-app.controller( 'CtrlCarousel',function($scope){
-  $scope.myInterval = 3000;
-  $scope.slides = [
-    {
-      image: 'http://lorempixel.com/400/200/'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/food'
-    },
-    {
-      image: 'http://lorempixel.com/400/200/sports'
-    },
+app.controller( 'CtrlCarousel',function($scope, $resource, $http){
+	$scope.instagram = {};
+/*	va},
     {
       image: 'http://lorempixel.com/400/200/people'
     }
-  ];
+  ];r headers = {
+		'Access-Control-Allow-Origin' : '*',
+		'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+		'Content-Type': 'application/json',
+		'Accept': 'application/json'
+	};
 
-/*  $('.carousel').carousel({
-                interval: 5000,
-                pause: "hover",
-                wrap: true
-            })
-            .on('click', '.carousel-control', handle_nav);
-
-  var handle_nav = function(e) {
-        e.preventDefault();
-        var nav = $(this);
-        nav.parents('.carousel').carousel(nav.data('slide');
-        }*/
+	$http({
+		method: "POST",
+		headers: headers,
+		url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=1523801840.a434dd0.34350157e8a14b709d04b1772816a074&count=3'})
+ 	.then(function(response) {
+    	console.log('success', response);
+	});
+*/ 	$scope.instagram = $resource("https://api.instagram.com/v1/users/self/media/recent/?access_token=1523801840.a434dd0.34350157e8a14b709d04b1772816a074&count=20",
+	{q : 'angularjs', callback : 'JSON_CALLBACK'},
+	{get:{method:'JSONP'}})
+	$scope.instagram.get(function(response) {
+		$scope.instagram = response.data;
+	console.log('success', $scope.instagram);
+	    
+	});
+/*	$scope.search = function(){
+		$scope.instaResearch = $scope.instagram.get({q:$scope.searTerm});
+		console.log(instaResearch);
+	}*/
 })
 
 app.controller('CtrlArticle', function($scope){
