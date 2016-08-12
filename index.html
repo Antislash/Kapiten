@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="style/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.4.0/ui-bootstrap-tpls.min.js"></script>
+
+	<link rel="icon" href="image/icone/logo.ico" />
 	
 	</head>
 	<body ng-app="ngKapiten">
@@ -20,11 +21,12 @@
 		<br>
 		
 		<!-- Images et logo d'entête -->
-		<div class="blocLogo">
+		<!-- <div class="blocLogo"> -->
 			<img src="image/LOGOGRIS.png" class="imgShip col-xs-1 ">
-			<a  href="#/Accueil"><img src="image/KAPITEN5GRIS.png" class="imgKapiten col-xs-3 col-md-offset-4"></a>
+			<a  href="#/Accueil"><img src="image/KAPITEN5GRIS.png" class="col-xs-3 col-md-offset-4" id="imgKapiten"></a>
 			<img src="image/YEUXGRIS.png" class="imgYeux col-md-offset-3 col-xs-1 ">
-		</div>
+		<!-- </div> -->
+
 		<!-- Corps -->
 		<div ng-view></div>
 
