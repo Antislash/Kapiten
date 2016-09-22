@@ -25,3 +25,7 @@ app.listen(port);
 console.log("Serveur lancé et en écoute du port " + port);
 
 app.use(express.static(path.join(__dirname, '..'))); //Pour pouvoir utiliser des chemins relatifs dans les fichier utilisés
+
+app.post('/someUrl', function(req, res){
+	res.send();
+})

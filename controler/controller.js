@@ -46,7 +46,7 @@ app.controller('CtrlFooter', function($scope){
 	]
 })
 
-app.controller( 'CtrlCarousel',function($scope, $resource, $http){
+app.controller( 'CtrlCarousel',function($scope, $resource){
 	$scope.instagram = {};
 /*	va},
     {
@@ -71,7 +71,7 @@ app.controller( 'CtrlCarousel',function($scope, $resource, $http){
 	{get:{method:'JSONP'}})
 	$scope.instagram.get(function(response) {
 		$scope.instagram = response.data;
-	console.log('success', $scope.instagram);
+/*	console.log('success', $scope.instagram);*/
 	    
 	});
 /*	$scope.search = function(){
@@ -80,7 +80,24 @@ app.controller( 'CtrlCarousel',function($scope, $resource, $http){
 	}*/
 })
 
-app.controller('CtrlArticle', function($scope){
+app.controller('CtrlArticle', function($scope, $http){
+
+	var req = {
+	 method: 'POST',
+	 url: '/someUrl',
+	 headers: {
+	   'Content-Type': undefined
+	 },
+	 data: { test: 'test' }
+	}
+
+	$http(req).
+	then(
+		function(response){
+			console.log('ok', response);
+		}, 
+		function(){console.log('not ok');});
+
 	$scope.articles = [
 		{
 			titre : "Le navire prend le large",
